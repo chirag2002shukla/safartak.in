@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coming Soon</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 10%;
+    }
+    h1 {
+      font-size: 3em;
+      color: #333;
+    }
+    p {
+      font-size: 1.2em;
+      color: #777;
+    }
+    #countdown {
+      font-size: 2em;
+      margin-top: 20px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Safartak is Coming Soon!</h1>
+  <p>We’re gearing up for launch — expect us in about 3 months!</p>
+  <div id="countdown"></div>
+
+  <script>
+    // Set the launch date 90 days from today
+    var countDownDate = new Date();
+    countDownDate.setDate(countDownDate.getDate() + 90);
+
+    // Update countdown every second
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate.getTime() - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "We have launched!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
