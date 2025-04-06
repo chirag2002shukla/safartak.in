@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Coming Soon</title>
+  <title>Safartak Coming Soon</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-    
+
     * {
       margin: 0;
       padding: 0;
@@ -15,16 +15,16 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #000000, #ff69b4);
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #333;
+      color: #fff;
       overflow: hidden;
       position: relative;
     }
-    
+
     .particles {
       position: absolute;
       top: 0;
@@ -33,14 +33,14 @@
       height: 100%;
       z-index: 1;
     }
-    
+
     .particle {
       position: absolute;
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(255, 255, 255, 0.2);
       border-radius: 50%;
-      animation: float 15s infinite linear;
+      animation: float 20s infinite linear;
     }
-    
+
     @keyframes float {
       0% {
         transform: translateY(0) rotate(0deg);
@@ -56,15 +56,15 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(0, 0, 0, 0.75);
       padding: 60px 40px;
       border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 15px 35px rgba(255, 105, 180, 0.3);
       backdrop-filter: blur(10px);
       width: 90%;
       max-width: 600px;
       animation: fadeIn 1.2s ease-in-out;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     @keyframes fadeIn {
@@ -80,23 +80,20 @@
 
     .logo {
       margin-bottom: 20px;
-      font-size: 3.5rem;
-      background: linear-gradient(45deg, #6a11cb, #2575fc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: pulse 2s infinite;
+      font-size: 4rem;
+      animation: spin 5s infinite linear;
     }
-    
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.1); }
+      100% { transform: rotate(360deg) scale(1); }
     }
 
     h1 {
       font-size: 2.8rem;
       font-weight: 700;
-      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 20px;
@@ -106,7 +103,7 @@
     p {
       font-size: 1.2rem;
       margin-bottom: 30px;
-      color: #555;
+      color: #ddd;
       line-height: 1.6;
     }
 
@@ -115,88 +112,94 @@
       justify-content: center;
       margin: 30px 0;
     }
-    
+
     .countdown-box {
       display: flex;
       flex-direction: column;
       margin: 0 10px;
       min-width: 80px;
     }
-    
+
     .countdown-value {
       font-size: 2.5rem;
       font-weight: bold;
-      background: linear-gradient(45deg, #6a11cb, #2575fc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ff69b4;
       padding: 10px;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      background-color: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.1);
     }
-    
+
     .countdown-label {
       font-size: 0.9rem;
-      color: #666;
+      color: #aaa;
       margin-top: 5px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    
-    /* Email subscription section removed */
-    
-    .social-icons {
+
+    .passengers {
+      margin-top: 40px;
       display: flex;
       justify-content: center;
-      margin-top: 60px;
-    }
-    
-    .social-icon {
-      font-size: 1.5rem;
-      margin: 0 15px;
-      color: #555;
-      transition: all 0.3s ease;
-    }
-    
-    .social-icon:hover {
-      transform: translateY(-5px);
-      color: #6a11cb;
+      gap: 10px;
+      animation: floatPassengers 3s ease-in-out infinite;
     }
 
-    .footer-note {
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 40px;
+    .passenger {
+      font-size: 2rem;
+      animation: wiggle 2s ease-in-out infinite;
     }
-    
+
+    @keyframes floatPassengers {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes wiggle {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(-5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
     @media (max-width: 768px) {
       .container {
         padding: 40px 20px;
       }
-      
+
       h1 {
         font-size: 2.2rem;
       }
-      
+
       .countdown-box {
         min-width: 60px;
         margin: 0 5px;
       }
-      
+
       .countdown-value {
         font-size: 1.8rem;
+      }
+
+      .logo {
+        font-size: 3rem;
+      }
+
+      .passenger {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="particles" id="particles"></div>
-  
+
   <div class="container">
-    <div class="logo">🚀</div>
-    <h1>We're Launching Soon!</h1>
-    <p>Our site is getting ready for takeoff. Stay connected!</p>
-    
+    <div class="logo">🚌</div>
+    <h1>Safartak Coming Soon</h1>
+    <p>We’re preparing your journey. Stay buckled in!</p>
+
     <div class="countdown-container">
       <div class="countdown-box">
         <div class="countdown-value" id="days">00</div>
@@ -216,37 +219,40 @@
       </div>
     </div>
 
+    <div class="passengers">
+      <div class="passenger">👨‍💼</div>
+      <div class="passenger">👩‍🦰</div>
+      <div class="passenger">👶</div>
+      <div class="passenger">🧓</div>
+      <div class="passenger">👩‍🦳</div>
+    </div>
+  </div>
 
   <script>
-    // Create particles
+    // Create floating particles
     const particlesContainer = document.getElementById('particles');
     for (let i = 0; i < 50; i++) {
       const particle = document.createElement('div');
       particle.classList.add('particle');
-      
-      // Random size between 5px and 20px
+
       const size = Math.random() * 15 + 5;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
-      
-      // Random position
+
       particle.style.left = `${Math.random() * 100}%`;
       particle.style.top = `${Math.random() * 100}%`;
-      
-      // Random animation duration between 15s and 30s
+
       const duration = Math.random() * 15 + 15;
       particle.style.animationDuration = `${duration}s`;
-      
-      // Random delay
+
       const delay = Math.random() * 15;
       particle.style.animationDelay = `${delay}s`;
-      
+
       particlesContainer.appendChild(particle);
     }
-  
-    // Set launch date
+
+    // Countdown
     const countdownDate = new Date("August 1, 2025 00:00:00").getTime();
-    
     const daysElement = document.getElementById("days");
     const hoursElement = document.getElementById("hours");
     const minutesElement = document.getElementById("minutes");
@@ -261,11 +267,9 @@
         hoursElement.innerHTML = "00";
         minutesElement.innerHTML = "00";
         secondsElement.innerHTML = "00";
-        
-        document.querySelector('h1').innerHTML = "🎉 We're Live!";
-        document.querySelector('p').innerHTML = "Our platform is now available. Thank you for your patience!";
-        // Email section reference removed
-        
+
+        document.querySelector('h1').innerHTML = "🎉 Safartak is Live!";
+        document.querySelector('p').innerHTML = "Hop on board — we’re rolling now!";
         return;
       }
 
@@ -280,11 +284,8 @@
       secondsElement.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
     }
 
-    // Update countdown immediately and then every second
     updateCountdown();
     setInterval(updateCountdown, 1000);
-    
-    // Email form validation removed
   </script>
 </body>
 </html>
